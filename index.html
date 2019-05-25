@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Nilai</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatitble" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript">
+
+        function Run(){
+
+            var NIM = document.getElementsByClassName('NIM')[0];
+            var NamaMahasiswa = document.getElementsByClassName('NamaMahasiswa')[0];
+            var Kelas = document.getElementsByClassName('Kelas')[0];
+            var MataKuliah = document.getElementsByClassName('MataKuliah')[0];
+            var Tugas = document.getElementsByClassName('Tugas')[0];
+            var Formatif = document.getElementsByClassName('Formatif')[0];
+            var UTS = document.getElementsByClassName('UTS')[0];
+            var UAS = document.getElementsByClassName('UAS')[0];
+            var TotalNilai = document.getElementsByClassName('TotalNilai')[0];
+
+            var ONIM = document.getElementsByClassName('ONIM')[0];
+            var ONamaMahasiswa = document.getElementsByClassName('ONamaMahasiswa')[0];
+            var OKelas = document.getElementsByClassName('OKelas')[0];
+            var OMataKuliah = document.getElementsByClassName('OMataKuliah')[0];
+            var NilaiAkhir = document.getElementsByClassName('NilaiAkhir')[0];
+            var Grade = document.getElementsByClassName('Grade')[0];
+
+            if (NIM.value == '180441020001'){
+
+                NamaMahasiswa.value = 'Andika Kurniawan';
+
+            }else if(NIM.value == '180441020002'){
+
+                NamaMahasiswa.value = 'Fikri Wahyudi';
+
+            }else if(NIM.value == '180441020003'){
+
+                NamaMahasiswa.value = 'Muhammad Yusuf';
+
+            }else if(NIM.value == '180441020004'){
+
+                NamaMahasiswa.value = 'Andhika Tri Handoyo';
+
+            }else if(NIM.value == '180441020005'){
+
+                NamaMahasiswa.value = 'Jhaved Sutisna';
+
+            }else if(NIM.value == '180441020006'){
+
+                NamaMahasiswa.value = 'Kang Muslihat';
+
+            }else if(NIM.value == '180441020007'){
+
+                NamaMahasiswa.value = 'Dwiga Dwintara';
+
+            }
+
+        }
+
+        function Proses(){
+
+            var NIM = document.getElementsByClassName('NIM')[0];
+            var NamaMahasiswa = document.getElementsByClassName('NamaMahasiswa')[0];
+            var Kelas = document.getElementsByClassName('Kelas')[0];
+            var MataKuliah = document.getElementsByClassName('MataKuliah')[0];
+            var Tugas = document.getElementsByClassName('Tugas')[0];
+            var Formatif = document.getElementsByClassName('Formatif')[0];
+            var UTS = document.getElementsByClassName('UTS')[0];
+            var UAS = document.getElementsByClassName('UAS')[0];
+            var TotalNilai = document.getElementsByClassName('TotalNilai')[0];
+
+            var ONIM = document.getElementsByClassName('ONIM')[0];
+            var ONamaMahasiswa = document.getElementsByClassName('ONamaMahasiswa')[0];
+            var OKelas = document.getElementsByClassName('OKelas')[0];
+            var OMataKuliah = document.getElementsByClassName('OMataKuliah')[0];
+            var NilaiAkhir = document.getElementsByClassName('NilaiAkhir')[0];
+            var Grade = document.getElementsByClassName('Grade')[0];
+
+            var Data = {'NIM' : NIM, 'Nama Mahasiswa' : NamaMahasiswa, 'Kelas' : Kelas, 'Mata Kuliah' : MataKuliah, 'Tugas' : Tugas, 'Formatif' : Formatif, 'UTS' : UTS, 'UAS' : UAS};
+
+            var DataString = ['NIM','Nama Mahasiswa', 'Kelas', 'Mata Kuliah', 'Tugas','Formatif','UTS','UAS'];
+
+            var DataBlmIsi = "";
+            for (var i = 0 ; i < DataString.length; i++){
+
+                if (Data[DataString[i]].value == ""){
+
+                    DataBlmIsi = DataBlmIsi + " " + DataString[i];
+
+                }
+
+            }
+
+
+
+            if (DataBlmIsi != ""){
+
+                alert('Silakan Isi Data Anda ' + DataBlmIsi);
+
+            }else {
+
+                TotalNilai.value = (Tugas.value*0.3)+(Formatif.value*0.1)+(UTS.value*0.25)+(UAS.value*0.35);
+
+                ONIM.value = NIM.value;
+                ONamaMahasiswa.value = NamaMahasiswa.value;
+                OKelas.value = Kelas.value;
+                OMataKuliah.value = MataKuliah.value;
+                NilaiAkhir.value = TotalNilai.value;
+
+
+                if (TotalNilai.value >= 90 ){
+
+                    Grade.value = 'A';
+
+                }else if (TotalNilai.value >= 85){
+
+                    Grade.value = 'A-';
+
+                }else if (TotalNilai.value >= 80){
+
+                    Grade.value = 'B+';
+
+                }else if (TotalNilai.value >= 75){
+
+                    Grade.value = 'B';
+
+                }else if (TotalNilai.value >= 70){
+
+                    Grade.value = 'B-';
+
+                }else if (TotalNilai.value >= 65){
+
+                    Grade.value = 'C+';
+
+                }else if (TotalNilai.value >= 60){
+
+                    Grade.value = 'C';
+
+                }else if (TotalNilai.value >= 55){
+
+                    Grade.value = 'C-';
+
+                }else if (TotalNilai.value >= 50){
+
+                    Grade.value = 'D';
+
+                }else if (TotalNilai.value < 50){
+
+                    Grade.value = 'E';
+
+                }
+
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h2>Daftar Nilai Mahasiswa</h2>
+        </div>
+        <fieldset>
+            <form action="" method="">
+                <div class="row form-group">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col" style="margin-bottom: 50px;">
+                                <h5>Inputan</h5>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>NIM</label>
+                            </div>
+                            <div class="col">
+                                <select name="NIM" class="form-control NIM" onchange="Run()">
+                                    <option value="">-- NIM --</option>
+                                    <option value="180441020001">180441020001</option>
+                                    <option value="180441020002">180441020002</option>
+                                    <option value="180441020003">180441020003</option>
+                                    <option value="180441020004">180441020004</option>
+                                    <option value="180441020005">180441020005</option>
+                                    <option value="180441020006">180441020006</option>
+                                    <option value="180441020007">180441020007</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Nama Mahasiswa</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control NamaMahasiswa" name="NamaMahasiswa">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Kelas</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control Kelas" name="Kelas">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                Mata Kuliah
+                            </div>
+                            <div class="col">
+                                <select name="MataKuliah" class="form-control MataKuliah">
+                                    <option value="">-- Mata Kuliah --</option>
+                                    <option value="B.Inggris">B.Inggris</option>
+                                    <option value="Akutansi">Akutansi</option>
+                                    <option value="Mentoring Agama">Mentoring Agama</option>
+                                    <option value="Komputer Jaringan">Komputer Jaringan</option>
+                                    <option value="Web Design">Web Design</option>
+                                    <option value="Kewirausahaan">Kewirausahaan</option>
+                                    <option value="Algoritma Java">Algoritma Java</option>
+                                    <option value="Database">Database</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group" style="margin-top : 50px;">
+                            <div class="col">
+                                <p>Nilai :</p>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-sm-2">
+                                <p>Tugas 30%</p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p>Formatif 10%</p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p>UTS 25%</p>
+                            </div>
+                            <div class="col-sm-2">
+                                <p>UAS 35%</p>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control Tugas" name="Tugas">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control Formatif" name="Formatif">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control UTS" name="UTS">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control UAS" name="UAS">
+                            </div>  
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">
+                                <label>Total Nilai</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control TotalNilai" name="TotalNilai">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-auto">
+                                <button type="button" class="btn btn-success" onclick="Proses()">Proses</button>
+                            </div>
+                            <div class="col-auto">
+                                <button type="reset" class="btn btn-primary">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col" style="margin-bottom: 50px;">
+                                <h5>Output</h5>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>NIM</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control ONIM" name="ONIM">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Nama Mahasiswa</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control ONamaMahasiswa" name="ONamaMahasiswa">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Kelas</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control OKelas" name="OKelas">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Mata Kuliah</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control OMataKuliah" name="OMataKuliah">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Nilai Akhir</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control NilaiAkhir" name="NilaiAkhir">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label>Grade</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control Grade" name="Grade">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <script src="Bootstrap/jquery/jquery.js"></script>
+    <script src="Bootstrap/popper/popper.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
